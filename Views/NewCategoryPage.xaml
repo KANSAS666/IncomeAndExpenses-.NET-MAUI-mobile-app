@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:IncomeAndExpenses.ViewModels"  
+             x:Class="IncomeAndExpenses.Views.NewCategoryPage"
+             Title="Новая категория">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Категория" FontSize="Medium" />
+            <Editor Text="{Binding CategoryName, Mode=TwoWay}" 
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+            <StackLayout Orientation="Vertical" Spacing="5">
+                <Button Text="Добавить" Command="{Binding AddCategoryCommand}"
+                        HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Назад" Command="{Binding CancelCategoryCommand}" 
+                        HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

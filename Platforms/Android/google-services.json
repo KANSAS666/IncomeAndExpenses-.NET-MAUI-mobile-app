@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1002556135721",
+    "project_id": "chuguncoursework",
+    "storage_bucket": "chuguncoursework.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002556135721:android:fb7ea74af245142f593f38",
+        "android_client_info": {
+          "package_name": "com.chugun.coursework"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtxbOyUUMg409KkDtyQQE4alFh5JDnVj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

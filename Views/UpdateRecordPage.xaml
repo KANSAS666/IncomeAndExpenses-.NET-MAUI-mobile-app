@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:IncomeAndExpenses.ViewModels"  
+             xmlns:model="clr-namespace:IncomeAndExpenses.Models"
+             x:Class="IncomeAndExpenses.Views.UpdateRecordPage"
+             Title="Изменить сумму"
+             x:Name="updateRecordPage">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <StackLayout HorizontalOptions="Center" Margin="0,0,0,10">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Операция: " FontSize="Medium" />
+                    <Label Text="{Binding Operation}" FontSize="Medium" />
+                </StackLayout>
+            </StackLayout>
+            
+            <Label Text="Категория:" FontSize="Medium" />
+            <Picker x:Name="PickerCategory" SelectedItem="{Binding Category, Mode=TwoWay}"
+                    SelectedIndexChanged="pickerCategory_SelectedIndexChanged"></Picker>
+
+            
+            <Label Text="Сумма:" FontSize="Medium" />
+            <Editor Text="{Binding Sum, Mode=TwoWay}" 
+                    AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+
+            <Label Text="Дата" FontSize="Medium" />
+            <DatePicker x:Name="DatePickerDate"
+                        DateSelected="DatePickerDate_onDateSelected"
+                        Date="{Binding Date, Mode=TwoWay}"></DatePicker>
+
+            <StackLayout Orientation="Vertical" Spacing="5">
+                <Button Text="Обновить" Command="{Binding UpdateRecordCommand}"
+                    HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Назад" Command="{Binding CancelUpdateRecordCommand}" 
+                    HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

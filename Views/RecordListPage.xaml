@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:IncomeAndExpenses.ViewModels"  
+             xmlns:model="clr-namespace:IncomeAndExpenses.Models"
+             x:Class="IncomeAndExpenses.Views.RecordListPage"
+             Title="Записи"
+             x:Name="recordListPage">
+
+
+    <Grid Background="{StaticResource GradientBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <StackLayout Orientation="Horizontal" >
+            <Label Text="Фильтровать по операциям: " FontSize="Medium"
+                   Margin="10,11,0,0"
+                   TextColor="White" />
+
+            <Picker x:Name="OperationPicker" Title="Выбрать" FontSize="Medium"  
+                    SelectedIndexChanged="OperationPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Все</x:String>
+                    <x:String>Расходы</x:String>
+                    <x:String>Доходы</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+
+        <RefreshView x:Name="RecordsRefreshView" Grid.Row="1" x:DataType="local:RecordViewModel"
+                  Command="{Binding LoadItemsCommand}" 
+                  IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="RecordsListView"
+            ItemsSource="{Binding Records}"
+            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems x:DataType="model:Record">
+                                    <SwipeItem Text="Удалить"
+                                    IconImageSource="delete_icon.png"
+                                    BackgroundColor="Red"
+                                    Command="{Binding BindingContext.RemoveRecordCommand,
+                                    Source={x:Reference recordListPage}}"
+                                    CommandParameter="{Binding}" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <StackLayout x:DataType="model:Record"
+                                     Padding="10"
+                                     Margin="0,10,0,0">
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Операция: " 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleYellow}" 
+                                       FontSize="16"/>
+                                    <Label Text="{Binding Operation}" 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleAqua}"  
+                                       FontSize="16"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Категория: " 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleYellow}"   
+                                       FontSize="16"/>
+                                    <Label Text="{Binding Category}" 
+                                        LineBreakMode="WordWrap" 
+                                        Style="{StaticResource LabelColorStyleAqua}"   
+                                        FontSize="16"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Сумма:       " 
+                                           LineBreakMode="WordWrap" 
+                                           Style="{StaticResource LabelColorStyleYellow}"   
+                                           FontSize="16"/>
+                                    <Label Text="{Binding Sum}" 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleAqua}"   
+                                       FontSize="16"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Дата:          " 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleYellow}"  
+                                       FontSize="16"/>
+                                    <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}" 
+                                       LineBreakMode="WordWrap" 
+                                       Style="{StaticResource LabelColorStyleAqua}"   
+                                       FontSize="16"/>
+                                </StackLayout>
+
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                            NumberOfTapsRequired="1"
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:RecordViewModel}}, Path=RecordTapped}"		
+                            CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+
+        <ImageButton x:Name="AddRecordButton" Grid.Row="1" 
+HorizontalOptions="End" VerticalOptions="End"
+Command="{Binding AddItemCommand}"
+WidthRequest="70" HeightRequest="70"
+Source="button_add.png" Margin="0,0,10,10" CornerRadius="35"/>
+
+        <ImageButton x:Name="CalcButton" Grid.Row="1" 
+HorizontalOptions="End" VerticalOptions="End"
+Clicked="OnCalcButtonClicked"
+WidthRequest="70" HeightRequest="70"
+Source="button_calc.jpg" Margin="0,0,10,95" CornerRadius="35"/>
+
+
+
+
+        <StackLayout  Grid.Row="1" x:Name="SlidingPanel" Padding="10" 
+                      Style="{StaticResource SlidingPanelBackground}" IsVisible="False">
+
+            <StackLayout x:Name="CalculateMenu" Orientation="Horizontal" Spacing="70" Padding="10,0,10,0">
+                <Button Text="Рассчитать&#10;расходы"
+HorizontalOptions="FillAndExpand" Command="{Binding ExpenseCalculateCommand}"
+                    LineBreakMode="WordWrap"/>
+                <Button Text="Рассчитать&#10;доходы"
+HorizontalOptions="FillAndExpand" Command="{Binding IncomeCalculateCommand}"
+                    LineBreakMode="WordWrap"/>
+            </StackLayout>
+
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Threshold="50" Direction="Down" Swiped="CalculateMenu_OnSwiped"/>
+            </StackLayout.GestureRecognizers>
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

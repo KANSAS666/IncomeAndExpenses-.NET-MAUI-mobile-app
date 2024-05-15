@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IncomeAndExpenses.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#853189</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor">
+                                        <Setter.Value>
+                                            <AppThemeBindingExtension Light="{StaticResource Primary}" Dark="#2d1d2e" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#332196F3, Dark=#9b3c4348}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <LinearGradientBrush x:Key = "GradientBackgroundColor" StartPoint ="0,0" EndPoint="1,1" >
+                <GradientStop Color="{AppThemeBinding Light=#89c8f8, Dark=#515e69}" Offset="0.0"/>
+                <GradientStop Color="{AppThemeBinding Light=#ff05cd, Dark=#5c3454}" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <Style x:Key="LabelColorStyleYellow" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=#e7f218, Dark=#bf9e0a}"/>
+            </Style>
+
+            <Style x:Key="LabelColorStyleAqua" TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light=Aqua, Dark=#02b09f}"/>
+            </Style>
+
+            <Style x:Key="SlidingPanelBackground" TargetType="StackLayout">
+                <Setter Property="Background" Value="{AppThemeBinding Light=#ff38d7, Dark=#73536c}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

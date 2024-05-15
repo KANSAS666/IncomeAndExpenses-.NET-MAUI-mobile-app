@@ -1,0 +1,83 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = IncomeAndExpenses
+build_property.ProjectDir = D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/CalculatePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.CalculatePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CalculatePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CalculatePage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/CategoriesListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.CategoriesListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CategoriesListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CategoriesListPage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/NewCategoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.NewCategoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NewCategoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NewCategoryPage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/NewRecordPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.NewRecordPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NewRecordPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NewRecordPage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/RecordListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.RecordListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RecordListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RecordListPage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/UpdateCategoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.UpdateCategoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UpdateCategoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UpdateCategoryPage.xaml
+
+[D:/Study Data/C\#_LABS/dotnet_MAUI_Portfolio_Project/Application/Chugun_CourseWork/Views/UpdateRecordPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = IncomeAndExpenses.Views.UpdateRecordPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UpdateRecordPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UpdateRecordPage.xaml

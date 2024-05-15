@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\dotnet_bot.png" />
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\dotnet_bot@2x.png" />
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\dotnet_bot@3x.png" />
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\Resources\button_add.png" />
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\Resources\button_calc.jpg" />
+    <BundleResource Include="D:\Study Data\C#_LABS\dotnet_MAUI_Portfolio_Project\Application\Chugun_CourseWork\obj\Release\net8.0-maccatalyst\resizetizer\r\Resources\delete_icon.png" />
+    <BundleResource Include="obj\Release\net8.0-maccatalyst\resizetizer\f\OpenSans-Regular.ttf" />
+    <BundleResource Include="obj\Release\net8.0-maccatalyst\resizetizer\f\OpenSans-Semibold.ttf" />
+  </ItemGroup>
+</Project>

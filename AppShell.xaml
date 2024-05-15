@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:IncomeAndExpenses.Views"
+       xmlns:localViewModels="clr-namespace:IncomeAndExpenses.ViewModels"  
+       Title="IncomeAndExpenses"
+       x:Class="IncomeAndExpenses.AppShell"
+       FlyoutBackground="{StaticResource GradientBackgroundColor}">
+
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor">
+                    <Setter.Value>
+                        <AppThemeBindingExtension Light="{StaticResource Primary}" Dark="#2d1d2e" />
+                    </Setter.Value>
+                </Setter>
+                
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor">
+                    <Setter.Value>
+                        <AppThemeBindingExtension Light="{StaticResource Primary}" Dark="#2d1d2e" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor">
+                                        <Setter.Value>
+                                            <AppThemeBindingExtension Light="{StaticResource Primary}" Dark="#2d1d2e" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--
+            Custom Style you can apply to any Flyout Item
+            -->
+            
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <FlyoutItem Title="Записи">
+        <ShellContent Route="RecordsListPage" ContentTemplate="{DataTemplate local:RecordListPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Расходы">
+        <ShellContent Title="Расходы" Route="ExpensesListPage" ContentTemplate="{DataTemplate local:CategoriesListPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Доходы">
+        <ShellContent Title="Доходы" Route="IncomesListPage" ContentTemplate="{DataTemplate local:CategoriesListPage}"/>
+    </FlyoutItem>
+
+</Shell>

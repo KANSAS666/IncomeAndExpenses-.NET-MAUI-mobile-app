@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:IncomeAndExpenses.ViewModels"  
+             xmlns:model="clr-namespace:IncomeAndExpenses.Models"
+             x:Class="IncomeAndExpenses.Views.CalculatePage"
+             x:Name="calculatePage"
+             Title="Расчет общей суммы">
+
+    <StackLayout Spacing="3" Padding="15">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" 
+                     Margin="0,10,0,50">
+            <Label Text="Операция: " FontSize="Large" />
+            <Label Text="{Binding Operation}"
+                   FontSize="Large"
+                   TextColor="#ff9999"/>
+        </StackLayout>
+
+        <Label Text="Категория" FontSize="Medium"/>
+        <Picker x:Name="PickerCategory" SelectedItem="{Binding Category, Mode=TwoWay}"
+                SelectedIndexChanged="pickerCategory_SelectedIndexChanged"></Picker>
+
+        <Label Text="Выберите период времени" FontSize="Medium" />
+        <Picker x:Name="PeriodPicker" SelectedItem="{Binding Period, Mode=TwoWay}"
+                SelectedIndexChanged="PeriodPicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>За день</x:String>
+                <x:String>За неделю</x:String>
+                <x:String>За месяц</x:String>
+                <x:String>Указать свой период</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <StackLayout x:Name="CustomDatePeriod" IsVisible="False">
+        <Label Text="С какого числа" FontSize="Medium" />
+        <DatePicker x:Name="DatePickerStartDate"
+            DateSelected="DatePickerDate_onStartDateSelected"></DatePicker>
+
+        <Label Text="По какое число" FontSize="Medium" />
+        <DatePicker x:Name="DatePickerEndDate"
+            DateSelected="DatePickerDate_onEndDateSelected"></DatePicker>
+        </StackLayout>
+        
+
+        <StackLayout Orientation="Vertical" Spacing="5" Margin="0,25,0,0">
+            <Button Text="Рассчитать" Command="{Binding CalculateSumCommand}"
+        HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Назад" Command="{Binding CancelCalculateCommand}"
+        HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
